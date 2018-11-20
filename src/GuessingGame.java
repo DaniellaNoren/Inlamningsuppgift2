@@ -3,16 +3,22 @@ public class GuessingGame {
 
 	public static void main(String[] arg) {
 		
-		int low = 0;
-		int high = 0;
+	
 		try {
-			low = Integer.parseInt(arg[0]);
-			high = Integer.parseInt(arg[1]);
+			int low = Integer.parseInt(arg[0]);
+			int high = Integer.parseInt(arg[1]);
+			
+			Guesser guesser = new Guesser(low, high);
+		    guesser.start();
+		
 		}catch(NumberFormatException e) {
-			System.out.println("Not an int");
+			System.out.println("Not a number");
+		}catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Enter two numbers next time");
 		}
-		Guesser guesser = new Guesser(low, high);
-		guesser.start();
+		
+		
+		
 		
 		
 		
