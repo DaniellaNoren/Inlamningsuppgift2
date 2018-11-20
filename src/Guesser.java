@@ -1,5 +1,4 @@
 import java.io.Console;
-import java.util.Scanner;
 
 public class Guesser{
   private int low;
@@ -40,10 +39,7 @@ public class Guesser{
    * the player.
    */
   private String getReply(){
-	Scanner sc = new Scanner(System.in);  
-    String reply = sc.nextLine();
-    if(!(reply.equalsIgnoreCase("T") || reply.equalsIgnoreCase("F")))
-    	throw new IllegalArgumentException("Not a valid input, only enter \"T\" or \"F\"");
+    String reply = null;
     // Write code here which reads a String from the console.
     // As long as it is not a valid reply (one of "T" and "F")
     // write an error message, and read a new reply.
