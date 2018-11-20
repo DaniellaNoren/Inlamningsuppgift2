@@ -12,8 +12,14 @@ public class Guesser{
   private int high;
 
   public Guesser(int low, int high) {
-	  this.low = low;
-	  this.high = high;
+	  if(low <= high)
+		  this.low = low;
+	  else
+		  throw new IllegalArgumentException("Low can't be a higher number than High");
+	  if(high >= low)
+		  this.high = high;
+	  else
+		  throw new IllegalArgumentException("High can't be a lower number than Low");
   }
   /*
    * Task 1. Write code here for a constructor
@@ -98,6 +104,10 @@ public class Guesser{
                        guess +
                        " (took me " + numberOfGuesses +
                        " guesses)");
+  }
+  
+  public String toString() {
+	  return "Low="+low+", High="+high;
   }
 
 }
