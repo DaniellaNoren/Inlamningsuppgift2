@@ -4,6 +4,7 @@ public class TestGuesser {
 	public static void main(String[] args) {
 		constructorTest();
 		toStringTest();
+		nullStringTest();
 
 	}
 	public static void constructorTest() {
@@ -35,7 +36,27 @@ public class TestGuesser {
 			assert guesser1.toString().equals("Low="+1+", High="+100) : "toString-test failed";
 			assert guesser2.toString().equals("Low="+4+", High="+423) : "toString-test failed";
 			
-			System.out.println("toString-Test passed");
+			System.out.println("toString-Test passed!");
 	}
+	
+	public static void nullStringTest() {
+		 String str = null;
+		 try {
+			 if(str.equals("Detta är en sträng"))
+				 System.out.println("nullStringTest 1 failed, exception not thrown!");
+		 }catch(NullPointerException e) {
+			 System.out.println("nullStringTest 1 passed, exception thrown!");
+		 }
+		 
+		 try {
+			 if("Detta är en sträng".equals(str))
+				 System.out.println("This shouldn't be printed");
+			System.out.println("nullStringTest 2 passed, exception not thrown!");
+		 }catch(NullPointerException e) {
+			 System.out.println("nullStringTest 2 failed, exception thrown!");
+		 }
+	}
+	
+	
 
 }
