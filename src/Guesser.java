@@ -41,7 +41,9 @@ public class Guesser{
    */
   private String getReply(){
 	Scanner sc = new Scanner(System.in);
-    String reply = sc.nextLine();
+	String reply = "";
+	reply = sc.nextLine();
+
     while(!(reply.equalsIgnoreCase("T") || reply.equalsIgnoreCase("F"))) {
       System.out.println("Please answer \"T\" or \"F\"\nTry again:"); 	
       reply = sc.nextLine();
